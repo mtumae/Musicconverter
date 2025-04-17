@@ -1,0 +1,19 @@
+{% extends "home.html" %}
+{% block body %}
+    <div class="container w-auto mx-auto p-8 grid-cols-1 grid mt-3">
+    <section class="flex items-center justify-center rounded-md backdrop-blur-sm bg-black/30 mr-4 text-center">
+    <div>
+        <h1 class="text-lg font-bold">Upload</h1>
+        <form method="POST" enctype= multipart/form-data>
+        {% csrf_token %}
+        {{ form.as_p }}
+       <button class="bg-gray-900 p-2 rounded-md text-white hover:opacity-30 m-4">Upload your file</button>
+        </form>     
+    </div>  
+    </section>
+    </div>
+{% endblock %}
+
+
+       
+

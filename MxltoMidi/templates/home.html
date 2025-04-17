@@ -1,0 +1,44 @@
+{% load static%}
+{% load static tailwind_tags %}
+<script src="{% static 'htmx.min.js' %}" defer></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>  
+    {% tailwind_css %}
+</head>
+<body>
+
+    <div class="w-ful p-4 h-auto bg-gray-900 text-green-700 ">
+        <section class="text-left absolute">
+        <button class="left-0 font-extrabold text-3xl">M<sup>3</sup></button>
+    </section>
+        <section class="text-right">
+        <button class="mr-2 p-2 font-bold rounded-sm hover:bg-gray-950" onclick="window.location.href='upload'">Upload</button>
+        <button class="mr-2 p-2 font-bold rounded-sm hover:bg-gray-950" onclick="window.location.href='download'">Download</button>
+        <button class="mr-2 p-2 font-bold rounded-sm hover:bg-gray-950" onclick="window.location.href='about'">About</button>
+        </section>
+    </div>
+
+
+    {% block body %}
+    <div class="flex justify-center">
+        <input class="rounded-sm border-none w-1/4 ml-2 border-2 mr-1 mt-2" placeholder="Find a song..."><label class="mt-2 h-3"><button class="bg-green-700 p-2 rounded-sm hover:bg-green-600 h-auto text-white font-bold">Search</button></label>
+    </div>
+    <div class="flex justify-center mt-20 text-lg text-center">
+    <section>
+        <h1>Welcome to mxl to midi to mp4</h1>
+
+        <a>Convert your mxl files to mp4 files</a>
+        <div>
+        <a>Converted {{file_count}} files!</a>
+        </div>
+       
+    </section>
+    </div>
+</body>
+{% endblock %}
+</html>
+

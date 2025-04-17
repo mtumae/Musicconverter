@@ -1,0 +1,22 @@
+dotenv
+django-tailwind
+django-htmx
+
+asgiref
+dj-database-url
+Django
+django-heroku
+gunicorn
+packaging
+psycopg2
+psycopg2-binary
+sqlparse
+whitenoise
+
+# From Junaid
+music21
+midi2audio
+pretty_midi
+numpy
+opencv-python
+moviepy

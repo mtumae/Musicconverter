@@ -10,6 +10,7 @@ from .VideoRender import VideoRenders
 # Create your views here.
 
 def home(request):
+    file_count = Mxl_files.objects.count()
     form = mxl_files(request.POST, request.FILES)
     if request.method == "POST":
         if form.is_valid():
@@ -31,8 +32,12 @@ def home(request):
                 'error':errors
             }
             return render(request, "home.html", context)
+    context = {
+        'file_count':file_count,
+        'form':form,
+    }
     
-    return render(request, 'home.html', {'form':form})
+    return render(request, 'home.html', context)
 
 
 #
@@ -42,6 +47,7 @@ def home(request):
 
 def upload(request):
     file_count = Mxl_files.objects.count()
+    print(file_count)
     return render(request, 'home.html', {'file_count':file_count})
 
 

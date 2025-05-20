@@ -11,7 +11,11 @@
 </head>
 <div class="w-full p-4 h-auto bg-gray-900 border-b text-green-700 ">
         <section class="text-left absolute">
-        <button class="left-0 font-extrabold text-3xl">M<sup>3</sup></button>
+        <div class="flex flex-nowrap">
+            <button class="left-0 font-extrabold text-3xl">M<sup>3</sup></button>
+            <p class="font-bold">converted {{ file_count }} file(s)</p>
+         </div>
+       
     </section>
         <section class="text-right">
         <button class="mr-2 p-2 font-bold rounded-sm hover:bg-gray-950" onclick="window.location.href='upload'">Upload</button>

@@ -8,7 +8,8 @@ from .VideoRender import VideoRenders
 
 
 # Create your views here.
-def upload(request):
+
+def home(request):
     form = mxl_files(request.POST, request.FILES)
     if request.method == "POST":
         if form.is_valid():
@@ -21,19 +22,25 @@ def upload(request):
                 'filename_mp4':filename_mp4,
                 'filename_mxl':filename_mxl
             }
-            redirect(loading)
             VideoRenders(filename, filename_mp4).render(request)
+            return render(request, 'home.html', {"filename_mp4": filename_mp4})
         else:
             errors = form.errors
             context = {
                 'form':form,
                 'error':errors
             }
-            return render(request, "main/upload.html", context)
-              
-    return render(request, 'main/upload.html', {'form':form})
+            return render(request, "home.html", context)
+    
+    return render(request, 'home.html', {'form':form})
 
-def home(request):
+
+#
+# REMEMBER TO ADD ICONS 🫵🏿🫵🏿
+#
+
+
+def upload(request):
     file_count = Mxl_files.objects.count()
     return render(request, 'home.html', {'file_count':file_count})
 

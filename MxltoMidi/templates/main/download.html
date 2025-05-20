@@ -1,12 +1,10 @@
 {% extends "home.html" %}
 {% block body %}
-<div class="container p-4 grid-cols-1 grid mt-3"></div>
-    <section class="flex items-center justify-center rounded-md backdrop-blur-sm bg-black/30 text-center">
-    <div>
-        <h1 class="text-lg font-bold">Download</h1>
-        <video class="rounded-md" controls src=""></video>
-        <button class="bg-gray-900 p-2 rounded-md text-white hover:opacity-30 m-4">Download your file</button>
-    </div>
-    </section>
+<div class="shadow-lg border w-1/2 rounded-md p-10 text-center items-center">
+         <h1 id="text" class="text-5xl font-bold text-slate-500">Download {{ filename_mp4 }}</h1>
+            <video controls class="rounded-lg justify-self-center mt-4">
+            <source src="{{ filename_mp4 }}" type="video/mp4"></source>
+        </video><br>
+        <button><a style="color: white; font-style: none;" href="media/{{ filename_mp4 }}">Download</a></button>
 </div>
 {% endblock %}
